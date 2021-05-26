@@ -12,10 +12,10 @@ pd.set_option('display.width', None)
 pd.set_option('display.max_colwidth', None)
 
 # Access Keys / Tokens
-consumer_key= 'jT6Kyfw7lxQHI4I6bi5vukNX9'
-consumer_secret= 'RcrEVqGNKUWHSUIQPOSVMComsq6kJaMKhwwaTsLIU6xuOePBcc'
-access_token= '275593356-O2sgoC76ByaqK0OPrCzqU9ygpUawQSYlNjsq9jBR'
-access_token_secret= 'DPy6rcHMQTwulJASDwc5upddusBFPx07eIU317ScX56GS'
+consumer_key= '<Your Consumer Key Here>'
+consumer_secret= '<You Consumer Secret Here>'
+access_token= '<Your Access Token Here>'
+access_token_secret= '<Your Access Token Secret Here>'
 
 # Logging into the API
 try:
@@ -43,7 +43,7 @@ tweets = tw.Cursor(api.search,
 # Iterate and print tweets
 for tweet in tweets:
     print(tweet.text)
-    
+
 # Similarly, use a list comprehension to show tweets (only works if below line is at end of cell):
 [tweet.text for tweet in tweets]
 
@@ -53,7 +53,7 @@ for tweet in tweets:
 
 date_since = '2020-08-21'
 
-tweets = tw.Cursor(api.search, 
+tweets = tw.Cursor(api.search,
                     q='MAGA',
                     lang="en",
                     since=date_since).items(5000)
@@ -63,7 +63,7 @@ users_locs = [[tweet.user.screen_name, tweet.user.location, tweet.text] for twee
 # print(users_locs)
 
 # Create a dataframe from this data:
-df_tweet_text = pd.DataFrame(data=users_locs, 
+df_tweet_text = pd.DataFrame(data=users_locs,
                     columns=['user', "location", 'tweet'])
 
 ################################################################################################
